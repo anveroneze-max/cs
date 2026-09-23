@@ -51,7 +51,7 @@ with col3:
     if doc_vendedor:
         # Simulação de retorno de API da Receita Federal
         tempo_abertura = random.choice(["2 meses", "5 anos", "10 anos"])
-        local_vendedor = "Fortaleza - CE" Se len(doc_vendedor) > 11 else "São Paulo - SP"
+        local_vendedor = "Fortaleza - CE" if len(doc_vendedor) > 11 else "São Paulo - SP"
         
         st.info("Buscando dados na Receita/Birô...")
         time.sleep(1) # Efeito de carregamento
@@ -110,24 +110,3 @@ if st.button("Gerar Análise de Risco da Operação", type="primary"):
                 st.write("**Gatilhos acionados:**")
                 for m in motivos:
                     st.write(f"- {m}")
-Passo 2: Como testar no seu computador
-Você precisará ter o Python instalado.
-
-Abra o terminal (ou prompt de comando) e instale a biblioteca digitando: pip install streamlit
-
-Na pasta onde você salvou o app.py, rode o comando: streamlit run app.py
-
-Ele vai abrir o seu navegador automaticamente com o painel pronto.
-
-Passo 3: Como colocar na Nuvem (Cloud) de graça
-Crie uma conta gratuita no GitHub e coloque esse arquivo app.py lá, junto com um arquivo chamado requirements.txt (escreva apenas a palavra streamlit dentro dele).
-
-Acesse o site share.streamlit.io (Streamlit Community Cloud), faça login com o seu GitHub.
-
-Clique em "New app", selecione o seu repositório e o arquivo app.py.
-
-Clique em "Deploy". Em 2 minutos, você terá um link público que pode acessar do trabalho para testar o fluxo colocando os PDFs da vistoria e o seu documento Consorcio.
-
-Neste código, a leitura de conteúdo real do PDF e a chamada da IA estão simuladas (para gerar o alerta DDI de forma aleatória e mostrar o conceito). Se você gostar de como a tela ficou, o próximo passo seria instalar bibliotecas de extração (como PyPDF2 ou pdfplumber) no código para ele ler o texto real dos seus PDFs.
-
-O que achou da disposição visual e das regras de alerta?
